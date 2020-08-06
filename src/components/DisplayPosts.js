@@ -4,7 +4,7 @@ import {API, graphqlOperation} from 'aws-amplify'
 import DeletePost from './DeletePosts'
 import EditPost from './EditPost'
 import '../App.css'
-import { onCreatePost } from '../graphql/subscriptions';
+import { onCreatePost, onDeletePost, onUpdatePost } from '../graphql/subscriptions';
 
 export default class DisplayPosts extends Component{
 
@@ -29,12 +29,53 @@ export default class DisplayPosts extends Component{
                 })
             }
         })
+
+        this.DeletePostLister = API.graphql(graphqlOperation(onDeletePost))
+            .subscribe({
+                next: postData=>{
+
+                    const deletedPost = postData.value.data.onDeletePost
+                    const updatedPosts = this.state.posts.filter(post => post.id != deletedPost.id) 
+                   
+                    this.setState({
+                        posts: updatedPosts
+
+                    })
+                }
+            })
+       this.updatePostListener = API.graphql(graphqlOperation(onUpdatePost))    
+            .subscribe({
+          //      Event | Description next| Triggered every time a message is successfully received for the topic 
+                next: postData => { 
+                     const posts = [...this.state.posts]
+                    // getting the updated post data
+                    const updatePost = postData.value.data.onUpdatePost
+
+                    const updatedPostS=[]
+                    posts.map(post =>{
+                        if(post.id== updatePost.id){
+                            post = {...updatePost}
+                            console.log(post)
+                        }
+                        updatedPostS.push(post)
+                        return updatedPostS
+                    })
+
+                    this.setState({
+                        posts: updatedPostS
+                    }
+                   // , ()=>console.table(this.state.posts)
+                    )        
+                }
+            })
     }
 
 
     componentWillUnmount(){
 
-        this.createPostListener.subscribe()
+        this.createPostListener.unsubscribe()
+        this.deletePostListener.unsubscribe()
+        this.updatePostListener.unsubscribe()
     }
  
     getPosts= async()=>{
@@ -43,8 +84,7 @@ export default class DisplayPosts extends Component{
 
         this.setState({posts: result.data.listPosts.items})
     //    console.table(result.data.listPosts.items)
-       // console.log(result.data.listPosts.items)
-    //    console.log(result)
+
     }
 
     render(){
@@ -69,7 +109,16 @@ export default class DisplayPosts extends Component{
             <time style={{fontStyle:"italic", color:'#0ca5e297'}} >
                 {new Date(post.createdAt).toDateString()}
             </time>
-              <EditPost/>
+            <time style={{fontStyle:"italic", color:'#0ca5e297'}} >
+                {new Date(post.updatedAt).toDateString()}
+            </time>
+
+            {delete post['comments']}
+            {delete post['likes']}
+            {delete post['updatedAt']}
+
+
+              <EditPost {...post}/>
               <DeletePost data={post}/>
             </div>
 

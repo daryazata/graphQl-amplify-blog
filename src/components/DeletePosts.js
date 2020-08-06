@@ -6,7 +6,7 @@ export default class DeletePost extends Component{
 
     handleDeletePost= async postId=>{
         const input ={
-            id:postId
+            id: postId
         }
 
         await API.graphql(graphqlOperation(deletePost, {input}))

@@ -11,7 +11,7 @@ export default class CreatePost extends Component{
       postTitle:'',
       postBody:'',
       createdAt:'',
-      comments :'',
+    
       
     }
 
@@ -30,7 +30,7 @@ export default class CreatePost extends Component{
     }
 
     handleChangepost = event => this.setState({
-        //putting all values in the array
+       // accensing object key of value event.target.name->[event.target.name]
         [event.target.name] :event.target.value
       
         
@@ -48,7 +48,7 @@ export default class CreatePost extends Component{
                 postTitle: this.state.postTitle,
                 postBody:  this.state.postBody,
                 createdAt: new Date().toISOString(),
-              //  comments : this.state.comments
+         
         }
 
         await API.graphql(graphqlOperation(createPost,{input}))
