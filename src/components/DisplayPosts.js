@@ -70,7 +70,7 @@ export default class DisplayPosts extends Component{
                 {new Date(post.createdAt).toDateString()}
             </time>
               <EditPost/>
-              <DeletePost/>
+              <DeletePost data={post}/>
             </div>
 
 

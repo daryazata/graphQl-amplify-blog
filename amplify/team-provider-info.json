@@ -10,6 +10,11 @@
             "StackName": "amplify-blogreactgraphql-blogapi-123719",
             "StackId": "arn:aws:cloudformation:eu-central-1:537118542783:stack/amplify-blogreactgraphql-blogapi-123719/a4ec1660-d707-11ea-a984-0a1a4d297742",
             "AmplifyAppId": "d3c386nxpd4lys"
+        },
+        "categories": {
+            "auth": {
+                "blogreactgraphql61c21a42": {}
+            }
         }
     }
 }
