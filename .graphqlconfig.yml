@@ -2,7 +2,7 @@ projects:
   blogreactgraphql:
     schemaPath: src/graphql/schema.json
     includes:
-      - src/graphql/**/*.js
+      - queries
     excludes:
       - ./amplify/**
     extensions:
@@ -10,3 +10,7 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
+        maxDepth: 4
+extensions:
+  amplify:
+    version: 3

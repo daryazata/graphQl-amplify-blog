@@ -11,7 +11,14 @@ export default class EditPost extends Component{
 
         postData:{
 
-         ...this.props
+         id: this.props.id,
+         postOwnerId: this.props.postOwnerId,
+         postOwnerUsername: this.props.postOwnerUsername,
+         postTitle: this.props.postTitle,
+         postBody: this.props.postBody,
+         createdAt: this.props.createdAt,
+         //comments: this.props.comments,
+        // likes: this.props.likes
 
         }
 
@@ -69,7 +76,7 @@ export default class EditPost extends Component{
     }
 
     render(){
-
+       // console.log(this.props)
         return (
             <>
             {this.state.show && (

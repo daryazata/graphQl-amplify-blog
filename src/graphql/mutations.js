@@ -18,6 +18,15 @@ export const createPost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -30,6 +39,15 @@ export const createPost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -56,6 +74,15 @@ export const updatePost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -68,6 +95,15 @@ export const updatePost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -94,6 +130,15 @@ export const deletePost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -106,6 +151,15 @@ export const deletePost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -132,9 +186,25 @@ export const createComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -162,9 +232,25 @@ export const updateComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -192,9 +278,25 @@ export const deleteComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -223,9 +325,25 @@ export const createLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -253,9 +371,25 @@ export const updateLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -283,9 +417,25 @@ export const deleteLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt

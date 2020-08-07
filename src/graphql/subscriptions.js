@@ -15,6 +15,15 @@ export const onCreatePost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -27,6 +36,15 @@ export const onCreatePost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -50,6 +68,15 @@ export const onUpdatePost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -62,6 +89,15 @@ export const onUpdatePost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -85,6 +121,15 @@ export const onDeletePost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -97,6 +142,15 @@ export const onDeletePost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -120,9 +174,25 @@ export const onCreateComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -147,9 +217,25 @@ export const onUpdateComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -174,9 +260,25 @@ export const onDeleteComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -202,9 +304,25 @@ export const onCreateLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -229,9 +347,25 @@ export const onUpdateLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -256,9 +390,25 @@ export const onDeleteLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt

@@ -15,6 +15,15 @@ export const getPost = /* GraphQL */ `
           id
           commentOwnerId
           commentOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           content
           createdAt
           updatedAt
@@ -27,6 +36,15 @@ export const getPost = /* GraphQL */ `
           numberLikes
           likeOwnerId
           likeOwnerUsername
+          post {
+            id
+            postOwnerId
+            postOwnerUsername
+            postTitle
+            postBody
+            createdAt
+            updatedAt
+          }
           createdAt
           updatedAt
         }
@@ -51,9 +69,25 @@ export const listPosts = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -76,9 +110,25 @@ export const getComment = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -107,6 +157,12 @@ export const listComments = /* GraphQL */ `
           postTitle
           postBody
           createdAt
+          comments {
+            nextToken
+          }
+          likes {
+            nextToken
+          }
           updatedAt
         }
         content
@@ -132,9 +188,25 @@ export const getLike = /* GraphQL */ `
         postBody
         createdAt
         comments {
+          items {
+            id
+            commentOwnerId
+            commentOwnerUsername
+            content
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         likes {
+          items {
+            id
+            numberLikes
+            likeOwnerId
+            likeOwnerUsername
+            createdAt
+            updatedAt
+          }
           nextToken
         }
         updatedAt
@@ -163,6 +235,12 @@ export const listLikes = /* GraphQL */ `
           postTitle
           postBody
           createdAt
+          comments {
+            nextToken
+          }
+          likes {
+            nextToken
+          }
           updatedAt
         }
         createdAt

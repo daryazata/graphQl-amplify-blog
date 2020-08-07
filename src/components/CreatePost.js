@@ -11,7 +11,8 @@ export default class CreatePost extends Component{
       postTitle:'',
       postBody:'',
       createdAt:'',
-    
+      comments:'',
+      likes:''
       
     }
 
@@ -48,6 +49,7 @@ export default class CreatePost extends Component{
                 postTitle: this.state.postTitle,
                 postBody:  this.state.postBody,
                 createdAt: new Date().toISOString(),
+                
          
         }
 
